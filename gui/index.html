@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Network Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="eel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">Advanced Network Analyzer</h1>
+                <p class="card-description">Capture and analyze network traffic in real-time</p>
+            </div>
+            <div class="card-content">
+                <div class="controls">
+                    <div>
+                        <button id="captureButton" class="button button-start">Start Capture</button>
+                        <button id="exportButton" class="button button-export" disabled>Export Data</button>
+                    </div>
+                    <div class="theme-toggle">
+                        <button id="themeToggle" class="button button-theme">
+                            <span class="theme-icon">🌞</span>
+                            <span class="theme-text">Light</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Network Traffic</h2>
+                        </div>
+                        <div class="card-content">
+                            <canvas id="trafficChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Traffic Statistics</h2>
+                        </div>
+                        <div class="card-content">
+                            <p id="totalPackets">Total Packets: 0</p>
+                            <p id="avgPacketSize">Avg. Packet Size: 0 bytes</p>
+                            <p id="packetsPerSecond">Packets/s: 0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Packet Analysis</h2>
+            </div>
+            <div class="card-content">
+                <div class="tabs">
+                    <button class="tab active" data-tab="packetList">Packet List</button>
+                    <button class="tab" data-tab="packetInspection">Packet Inspection</button>
+                </div>
+                <div id="packetList">
+                    <div class="filters">
+                        <input type="text" id="packetFilter" placeholder="Filter packets...">
+                        <select id="protocolFilter">
+                            <option value="All">All Protocols</option>
+                            <option value="TCP">TCP</option>
+                            <option value="UDP">UDP</option>
+                            <option value="HTTP">HTTP</option>
+                            <option value="HTTPS">HTTPS</option>
+                        </select>
+                    </div>
+                    <div class="table-container">
+                        <table id="packetTable">
+                            <thead>
+                                <tr>
+                                    <th>Timestamp</th>
+                                    <th>Source IP</th>
+                                    <th>Destination IP</th>
+                                    <th>Protocol</th>
+                                    <th>Size</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>               
+                <div id="packetInspection" style="display: none;">
+                    <div id="packetDetails"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Note: This tool is for educational purposes only. Use responsibly and ethically.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

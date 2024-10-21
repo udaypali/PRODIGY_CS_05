@@ -1,0 +1,230 @@
+:root {
+    --bg-color: #fdf2f8;
+    --text-color: #1f2937;
+    --card-bg: #ffffff;
+    --card-header-bg: #f3e8ff;
+    --primary-color: #6b21a8;
+    --secondary-color: #7e22ce;
+    --button-start: #4ade80;
+    --button-start-hover: #22c55e;
+    --button-stop: #f87171;
+    --button-stop-hover: #ef4444;
+    --button-export: #60a5fa;
+    --button-export-hover: #3b82f6;
+    --tab-bg: #fed7aa;
+    --tab-active-bg: #fdba74;
+    --table-header-bg: #f3e8ff;
+    --table-row-hover: #faf5ff;
+    --border-color: #e5e7eb;
+}
+
+body.dark-mode {
+    --bg-color: #1f2937;
+    --text-color: #f3f4f6;
+    --card-bg: #374151;
+    --card-header-bg: #4b5563;
+    --primary-color: #c084fc;
+    --secondary-color: #a855f7;
+    --button-start: #34d399;
+    --button-start-hover: #10b981;
+    --button-stop: #f87171;
+    --button-stop-hover: #ef4444;
+    --button-export: #60a5fa;
+    --button-export-hover: #3b82f6;
+    --tab-bg: #f59e0b;
+    --tab-active-bg: #d97706;
+    --table-header-bg: #4b5563;
+    --table-row-hover: #4b5563;
+    --border-color: #6b7280;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.card-header {
+    background-color: var(--card-header-bg);
+    padding: 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0;
+    transition: color 0.3s;
+}
+
+.card-description {
+    color: var(--secondary-color);
+    margin-top: 10px;
+    transition: color 0.3s;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-start {
+    background-color: var(--button-start);
+    color: white;
+}
+
+.button-start:hover {
+    background-color: var(--button-start-hover);
+}
+
+.button-stop {
+    background-color: var(--button-stop);
+    color: white;
+}
+
+.button-stop:hover {
+    background-color: var(--button-stop-hover);
+}
+
+.button-export {
+    background-color: var(--button-export);
+    color: white;
+}
+
+.button-export:hover {
+    background-color: var(--button-export-hover);
+}
+
+.button-theme {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: var(--tab-bg);
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.tab.active {
+    background-color: var(--tab-active-bg);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    transition: border-color 0.3s;
+}
+
+th {
+    background-color: var(--table-header-bg);
+    color: var(--primary-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+tr:hover {
+    background-color: var(--table-row-hover);
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--secondary-color);
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+#packetFilter, #protocolFilter {
+    padding: 5px;
+    margin-right: 10px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.table-container {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color); 
+}
+
+.table-container table {
+    width: 100%;
+}
+
+.table-container th, .table-container td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-container tbody tr:hover {
+    background-color: var(--table-row-hover);
+}
